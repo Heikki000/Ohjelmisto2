@@ -37,6 +37,9 @@ class Auto:
     def kulje(self, aika):
         self.matka = self.matka + aika * self.nopeus
 
+    def kuljettu_matka(self):
+        return sum(self.matka for auto in cls.autot)
+
     def tiedot(self):
         print(f"Auton rekisteritunnus on {self.rekisteritunnus}, huippunopeus {self.huippunopeus} km/h, "
               f"tämänhetkinen nopeus {self.nopeus} km/h ja kuljettu matka {self.matka:.0f} km.")
@@ -45,16 +48,12 @@ class Auto:
 for i in range(10):
     autot.append(Auto("ABC-" + str(i+1), random.randint(100,200)))
 
-while Auto.auto.matka <= 1000:
+while self.matka <= 1000:
     for auto in autot:
         auto.kiihdytys(random.randint(-10, 15))
         auto.kulje(1)
+        auto.tiedot()
 
 print(autot)
 
 
-
-print(f"Auton nopeus on {auto_1.nopeus} km/h ja kuljettu matka on {auto_1.matka:.0f} km.")
-auto_1.kulje(1.5)
-print(f"Auton nopeus on {auto_1.nopeus} km/h ja kuljettu matka on {auto_1.matka:.0f} km.")
-# print(f"Auton rekisteritunnus on {auto_1.rekisteritunnus}") tämä muistutuksena, miten printataan suoraan
