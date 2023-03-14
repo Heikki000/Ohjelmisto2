@@ -39,3 +39,23 @@ dog2.say_hello()
 dog3 = Dog("Muro", 12, 10)
 
 print(f"Koiria luotu yhteensä: {Dog.dog_count}")
+
+# lisää koiria, sijoitetaan viittaukset listaan
+
+#dogs = [Dog("Rekku", 5, 2), Dog("Rekku", 5, 2), Dog("Rekku", 5, 2), Dog("Rekku", 5, 2)]
+dogs = []
+for i in range(5):
+        dogs.append(Dog("Koira" + str(i+1), 5+i, 5+i*2))
+
+        '''
+dogs.append(Dog("Koira1", 5, 2))
+dogs.append(Dog("Koira2", 5, 2))
+dogs.append(Dog("Koira3", 5, 2))
+dogs.append(Dog("Koira4", 5, 2))
+dogs.append(Dog("Koira5", 5, 2))'''
+
+for dog in dogs:
+    dog.say_hello()
+    dog.run(500)
+
+print(f"Koiria luotu yhteensä: {Dog.dog_count}")
