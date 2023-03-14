@@ -36,9 +36,9 @@ class Auto:
 
     def kulje(self, aika):
         self.matka = self.matka + aika * self.nopeus
+        return matka
 
-    def kuljettu_matka(self):
-        return sum(self.matka for auto in cls.autot)
+
 
     def tiedot(self):
         print(f"Auton rekisteritunnus on {self.rekisteritunnus}, huippunopeus {self.huippunopeus} km/h, "
@@ -48,11 +48,12 @@ class Auto:
 for i in range(10):
     autot.append(Auto("ABC-" + str(i+1), random.randint(100,200)))
 
-while self.matka <= 1000:
-    for auto in autot:
+for auto in autot:
+    while Auto.matka <= 10000:
         auto.kiihdytys(random.randint(-10, 15))
         auto.kulje(1)
         auto.tiedot()
+
 
 print(autot)
 
