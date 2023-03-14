@@ -30,9 +30,9 @@ class Auto:
         print(f"Auton rekisteritunnus on {self.rekisteritunnus}, huippunopeus {self.huippunopeus} km/h, "
               f"tämänhetkinen nopeus {self.nopeus} km/h ja kuljettu matka {self.matka:.0f} km.")
 
-auto_1 = Auto("ABC-123", 145)
+auto_1 = Auto("ABC-123", 142)
 
-auto_1.tiedot()
+#auto_1.tiedot()
 auto_1.kiihdytys(30)
 auto_1.kiihdytys(70)
 auto_1.kiihdytys(50)
