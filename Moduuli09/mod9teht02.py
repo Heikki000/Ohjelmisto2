@@ -18,11 +18,11 @@ class Auto:
 
     def kiihdytys(self, muutos):
         if muutos < 0:
-            while self.nopeus > 0 and muutos <= 0:
+            while self.nopeus > 0 and muutos < 0:
                 muutos += 1
                 self.nopeus -= 1
         else:
-            while self.nopeus < self.huippunopeus and muutos >= 0:
+            while self.nopeus < self.huippunopeus and muutos > 0:
                 muutos -= 1
                 self.nopeus += 1
 
