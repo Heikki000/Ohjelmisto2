@@ -8,6 +8,7 @@ ja lopuksi +50 km/h. Tulosta tämän jälkeen auton nopeus. Tee sitten hätäjar
 nopeuden muutos -200 km/h ja tulosta uusi nopeus. Kuljettua matkaa ei tarvitse vielä päivittää.
 '''
 
+
 class Auto:
     def __init__(self, rekisteritunnus, huippunopeus):
         self.rekisteritunnus = rekisteritunnus
@@ -16,8 +17,14 @@ class Auto:
         self.matka = 0
 
     def kiihdytys(self, muutos):
-        while self.nopeus >= 0 or self.nopeus <= self.huippunopeus:
-            self.nopeus += muutos
+        if muutos < 0:
+            while self.nopeus > 0 and muutos <= 0:
+                muutos += 1
+                self.nopeus -= 1
+        else:
+            while self.nopeus < self.huippunopeus and muutos >= 0:
+                muutos -= 1
+                self.nopeus += 1
 
     def tiedot(self):
         print(f"Auton rekisteritunnus on {self.rekisteritunnus}, huippunopeus {self.huippunopeus} km/h, "
@@ -27,9 +34,9 @@ auto_1 = Auto("ABC-123", 145)
 
 auto_1.tiedot()
 auto_1.kiihdytys(30)
-auto_1.kiihdytys(30)
+auto_1.kiihdytys(70)
+auto_1.kiihdytys(50)
 print(f"Auton nopeus on {auto_1.nopeus} km/h.")
-auto_1.kiihdytys(30)
-auto_1.kiihdytys(30)
-
+auto_1.kiihdytys(-200)
+print(f"Auton nopeus on {auto_1.nopeus} km/h.")
 # print(f"Auton rekisteritunnus on {auto_1.rekisteritunnus}") tämä muistutuksena, miten printataan suoraan
