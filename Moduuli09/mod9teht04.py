@@ -60,6 +60,4 @@ for auto in autot:
                 break
 
 
-#print(autot)
-
 
