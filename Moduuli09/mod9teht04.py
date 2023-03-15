@@ -47,17 +47,18 @@ class Auto:
 for i in range(10):
     autot.append(Auto("ABC-" + str(i+1), random.randint(100,200)))
 
-for auto in autot:
-    if auto.matka >= 10000:
-        print(f"Auto {auto.rekisteritunnus} on saavuttanut 1000 km:n matkan.")
-        break
-    else:
-        while auto.matka < 10000:
+game = True
+while game == True:
+    for auto in autot:
+        if auto.matka >= 10000:
+            print(f"Auto {auto.rekisteritunnus} on saavuttanut 1000 km:n matkan.")
+            game = False
+            break
+        else:
             auto.kiihdytä(random.randint(-10, 15))
             auto.kulje(1)
-            auto.tiedot()
-            if auto.matka >= 10000:
-                break
+            #auto.tiedot()  testaamista varten
+
 
 
 
