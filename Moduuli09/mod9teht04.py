@@ -35,10 +35,11 @@ class Auto:
                 self.nopeus += 1
 
     def kulje(self, aika):
+        if self.matka < 10000:
             self.matka = self.matka + aika * self.nopeus
             return self.matka
-
-
+        else:
+            return
 
 
     def tiedot(self):
