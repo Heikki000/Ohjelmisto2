@@ -18,7 +18,7 @@ class Auto:
     auto_count = 0
     def __init__(self, rekisteritunnus, huippunopeus):
         Auto.auto_count += 1
-        print(f"{Auto.auto_count}. Uusi auto luotu, rekisteri: {rekisteritunnus} ja huippunopeus {huippunopeus}.")
+        print(f"{Auto.auto_count}. Uusi auto luotu, rekisteri: {rekisteritunnus} ja huippunopeus {huippunopeus} km/h.")
         self.rekisteritunnus = rekisteritunnus
         self.huippunopeus = huippunopeus
         self.nopeus = 0
@@ -51,7 +51,8 @@ game = True
 while game == True:
     for auto in autot:
         if auto.matka >= 10000:
-            print(f"Auto {auto.rekisteritunnus} on saavuttanut 1000 km:n matkan ja voitti kilpailun!")
+            print("-------------------------------")
+            print(f"Auto {auto.rekisteritunnus} on saavuttanut 1000 km:n matkan ja voitti kilpailun!\n")
             game = False
             break
         else:
