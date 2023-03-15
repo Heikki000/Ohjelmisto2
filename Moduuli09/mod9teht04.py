@@ -51,18 +51,17 @@ for i in range(10):
     autot.append(Auto("ABC-" + str(i+1), random.randint(100,200)))
 
 for auto in autot:
-    while auto.matka < 1000:
-        auto.kiihdytä(random.randint(-10, 15))
-        auto.kulje(1)
-        auto.tiedot()
-  #  if auto.matka >= 1000:
-   #     print(f"Auto {auto.rekisteritunnus} on saavuttanut 1000 km:n matkan.")
-    #    break
+    if auto.matka >= 10000:
+        print(f"Auto {auto.rekisteritunnus} on saavuttanut 1000 km:n matkan.")
+        break
+    else:
+        while auto.matka < 10000:
+            auto.kiihdytä(random.randint(-10, 15))
+            auto.kulje(1)
+            auto.tiedot()
 
 
 
-
-
-print(autot)
+#print(autot)
 
 
