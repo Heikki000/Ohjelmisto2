@@ -51,13 +51,16 @@ game = True
 while game == True:
     for auto in autot:
         if auto.matka >= 10000:
-            print(f"Auto {auto.rekisteritunnus} on saavuttanut 1000 km:n matkan.")
+            print(f"Auto {auto.rekisteritunnus} on saavuttanut 1000 km:n matkan ja voitti kilpailun!")
             game = False
             break
         else:
             auto.kiihdytä(random.randint(-10, 15))
             auto.kulje(1)
             #auto.tiedot()  testaamista varten
+print("|Rekisteritunnus|  Huippunopeus |  Loppunopeus  | Kokonaismatka |")
+for auto in autot:
+    print(f"|{auto.rekisteritunnus:^{15}}|{auto.huippunopeus:^{15}}|{auto.nopeus:^{15}}|{auto.matka:^{15}}|")
 
 
 
