@@ -18,6 +18,7 @@ class Auto:
         print(f"Auton rekisteritunnus on {self.rekisteritunnus}, huippunopeus {self.huippunopeus} km/h, "
               f"tämänhetkinen nopeus {self.nopeus_nyt} km/h ja kuljettu matka {self.matka:.0f} km.")
 
+#luodaan uusi auto, 2 parametria
 auto_1 = Auto("ABC-123", 142)
 
 auto_1.tiedot()
