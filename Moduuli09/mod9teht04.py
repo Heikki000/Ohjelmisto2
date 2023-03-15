@@ -59,7 +59,8 @@ for auto in autot:
             auto.kiihdytä(random.randint(-10, 15))
             auto.kulje(1)
             auto.tiedot()
-
+            if auto.matka >= 10000:
+                break
 
 
 #print(autot)
