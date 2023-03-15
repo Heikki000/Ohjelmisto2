@@ -24,7 +24,7 @@ class Auto:
         self.nopeus = 0
         self.matka = 0
 
-    def kiihdytys(self, muutos):
+    def kiihdytä(self, muutos):
         if muutos < 0:
             while self.nopeus > 0 and muutos <= 0:
                 muutos += 1
@@ -35,8 +35,9 @@ class Auto:
                 self.nopeus += 1
 
     def kulje(self, aika):
-        self.matka = self.matka + aika * self.nopeus
-        return matka
+            self.matka = self.matka + aika * self.nopeus
+            return self.matka
+
 
 
 
@@ -49,8 +50,8 @@ for i in range(10):
     autot.append(Auto("ABC-" + str(i+1), random.randint(100,200)))
 
 for auto in autot:
-    while Auto.matka <= 10000:
-        auto.kiihdytys(random.randint(-10, 15))
+    while auto.matka < 1000:
+        auto.kiihdytä(random.randint(-10, 15))
         auto.kulje(1)
         auto.tiedot()
 
