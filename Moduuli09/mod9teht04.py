@@ -55,6 +55,12 @@ for auto in autot:
         auto.kiihdytä(random.randint(-10, 15))
         auto.kulje(1)
         auto.tiedot()
+  #  if auto.matka >= 1000:
+   #     print(f"Auto {auto.rekisteritunnus} on saavuttanut 1000 km:n matkan.")
+    #    break
+
+
+
 
 
 print(autot)
