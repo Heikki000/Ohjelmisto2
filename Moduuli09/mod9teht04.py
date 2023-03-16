@@ -12,8 +12,7 @@ Lopuksi tulostetaan kunkin auton kaikki ominaisuudet selkeäksi taulukoksi muoto
 '''
 import random
 
-autot = []
-matka = 0
+
 class Auto:
     auto_count = 0
     def __init__(self, rekisteritunnus, huippunopeus):
@@ -43,6 +42,7 @@ class Auto:
         print(f"Auton rekisteritunnus on {self.rekisteritunnus}, huippunopeus {self.huippunopeus} km/h, "
               f"tämänhetkinen nopeus {self.nopeus} km/h ja kuljettu matka {self.matka:.0f} km.")
 
+autot = []
 
 for i in range(10):
     autot.append(Auto("ABC-" + str(i+1), random.randint(100,200)))
