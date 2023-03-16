@@ -17,7 +17,7 @@ class Auto:
     auto_count = 0
     def __init__(self, rekisteritunnus, huippunopeus):
         Auto.auto_count += 1
-        print(f"{Auto.auto_count}. Uusi auto luotu, rekisteri: {rekisteritunnus} ja huippunopeus {huippunopeus} km/h.")
+        #print(f"{Auto.auto_count}. Uusi auto luotu, rekisteri: {rekisteritunnus} ja huippunopeus {huippunopeus} km/h.")
         self.rekisteritunnus = rekisteritunnus
         self.huippunopeus = huippunopeus
         self.nopeus = 0
