@@ -7,7 +7,7 @@ Viimeksi mainitut metodit ajavat hissiä yhden kerroksen ylös- tai alaspäin ja
 missä kerroksessa hissi sen jälkeen on. Testaa luokkaa siten, että teet pääohjelmassa hissin
 ja käsket sen siirtymään haluamaasi kerrokseen ja sen jälkeen takaisin alimpaan kerrokseen.
 '''
-uusi_kerros = 0
+
 class Hissi:
     def __init__(self, alin, ylin):
         self.alin = alin
@@ -33,6 +33,8 @@ class Hissi:
         if self.kerros == uusi_kerros:
             #print(f"Olet haluamassasi kerroksessa, kerros {uusi_kerros:.0f}:ssa!")
             return
+
+uusi_kerros = 0
 
 eka_hissi = Hissi(1, 7)
 print("Olet nyt talon alimmassa eli 1. kerroksessa. \n")
