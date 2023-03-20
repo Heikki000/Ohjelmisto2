@@ -29,11 +29,13 @@ class Lehti(Julkaisu):
     def tulosta_tiedot(self):
         print(f"Lehden nimi on {self.nimi}.")
         print(f"Lehden päätoimittaja on {self.päätoimittaja}.")
+        return
 
 lehti1 = Lehti('Aku Ankka', 'Aki Hyyppä')
 kirja1 = Kirja('Hytti n:o 6', 'Rosa Liksom', 200)
 
 julkaisut = [lehti1, kirja1]
+
 print()
 for j in julkaisut:
     j.tulosta_tiedot()
