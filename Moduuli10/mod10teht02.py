@@ -10,7 +10,7 @@ class Hissi:
     def __init__(self, alin, ylin):
         self.alin = alin
         self.ylin = ylin
-        self.kerros = 0
+        self.kerros = 1
 
     def kerros_ylös(self):
         self.kerros += 1
@@ -35,25 +35,32 @@ class Talo:
     def __init__(self, alin, ylin, hissien_lkm):
         self.alin = alin
         self.ylin = ylin
-        self.hissit = [Hissi(alin, ylin) for n in range(hissien_lkm)]
+        self.hissien_lkm = hissien_lkm
+        self.hissit = []
+        for n in range(hissien_lkm):
+            self.hissit.append(Hissi(alin, ylin))
 
-    def aja_hissiä(self, hissi_nro, kohde_kerros):
-        hissi = self.hissit[hissi_nro - 1]
-        if kohde_kerros < self.alin or kohde_kerros > self.ylin:
-            print("Virhe: kohdekerros on talon ulkopuolella.")
-            return
-        hissi.siirry_kerrokseen(kohde_kerros)
+    def aja_hissiä(self, hissi_nro, uusi_kerros):
+        self.hissi_nro = self.hissit[hissi - 1]
+        self.hissit[hissi_nro].siirry_kerrokseen(uusi_kerros)
 
-kohde = 0
+
+uusi_kerros = 0
 talo = Talo(1, 7, 3)
-print("Tervetuloa käyttämään talon hissejä. Olet nyt talon alimmassa eli 1. kerroksessa.")
-while kohde != '':
-    kohde = int(input("Mihin kerrokseen haluat mennä (1-7)? "))
-    while kohde < 1 or kohde > 7:
+print("Tervetuloa ajelemaan talon hissejä. Olet nyt talon alimmassa eli 1. kerroksessa.")
+
+
+uusi_kerros = int(input("Mihin kerrokseen haluat lähettää hissin (1-7)? "))
+while uusi_kerros != '':
+    while uusi_kerros < 1 or uusi_kerros > 7:
         print("Virhe: kerros on talon ulkopuolella.")
-        kohde = int(input("Mihin kerrokseen haluat mennä (1-7)? "))
-    hissi_nro = int(input(f"Minkä hissin haluat ottaa (1-{len(talo.hissit)})? "))
-    talo.aja_hissiä(hissi_nro, kohde)
+        kohde = int(input("Mihin kerrokseen haluat lähettää hissin (1-7)? "))
+    hissi = int(input(f"Minkä hissin haluat valita (1-{len(talo.hissit)})? "))
+    talo.aja_hissiä(talo.hissit[hissi-1], uusi_kerros)
+    uusi_kerros = int(input("Mihin kerrokseen haluat lähettää hissin (1-7)? "))
+
+print("Ohjelma lopetettu")
+
 
 
 
