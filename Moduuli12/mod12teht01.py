@@ -11,10 +11,11 @@ try:
     vastaus = requests.get(pyyntö)
     if vastaus.status_code ==200:
         json_vastaus = vastaus.json()
-    print("Tässä sinulle Chuck Norris -vitsi, ole hyvä:")
+    print("Tässä sinulle Chuck Norris -vitsi, ole hyvä:\n")
     print(json_vastaus["value"])
 except requests.exceptions.RequestException as e:
     print("Hakua ei voitu suorittaa")
+
 #print(json.dumps(vastaus, indent=2))   testiprintti
 #print()
 #print(vastaus["value"])
