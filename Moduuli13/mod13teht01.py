@@ -12,11 +12,12 @@ app = Flask(__name__)
 def is_prime(luku):
     try:
         luku = int(luku)
-
         total = 0
+
         for n in range(1, luku):
             if luku % n == 0:
                 total = total + 1
+
         if total <= 1:
             vastaus = {
                 "Number": luku,
