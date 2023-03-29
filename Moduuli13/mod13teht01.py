@@ -11,15 +11,33 @@ app = Flask(__name__)
 @app.route('/alkuluku/<luku>')
 def is_prime(luku):
     try:
-        number = int(input("Anna luku: "))
-        is_prime = True
+        luku = int(luku)
 
-        for n in range(2, number):
-            if number % n == 0:
-                print(f"{number} ei ole alkuluku.")
-                is_prime = False
-                break
+        total = 0
+        for n in range(1, luku):
+            if luku % n == 0:
+                total = total + 1
+        if total <= 1:
+            vastaus = {
+                "Number": luku,
+                "isPrime": True
+            }
+        else:
+            vastaus = {
+                "Number": luku,
+                "isPrime": False
+            }
 
-        # if is_prime == true:
-        if is_prime:
-            print(f"\n{number} on alkuluku.")
+    except ValueError:
+        vastaus = {
+            "palaute": "Virheellinen syöte, korjaa antamasi osoite"
+        }
+
+    jsonvast = json.dumps(vastaus)
+    return Response(response=jsonvast, mimetype="application/json")
+
+if __name__ == '__main__':
+    app.run(use_reloader=True, host='127.0.0.1', port=3000)
+
+
+
