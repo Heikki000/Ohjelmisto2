@@ -8,6 +8,7 @@ import json
 from flask import Flask, Response
 import mysql.connector
 
+
 def connect_db():
     return mysql.connector.connect(
         host='127.0.0.1',
@@ -20,7 +21,9 @@ def connect_db():
 connection = connect_db()
 
 app = Flask(__name__)
+app.config['JSON_SORT_KEYS'] = False
 @app.route('/kenttä/<haku_icao>')
+
 
 def get_airport(haku_icao):
     query = f"select name, municipality from airport where ident ='{haku_icao}'"
@@ -31,7 +34,7 @@ def get_airport(haku_icao):
         vastaus = {'ICAO': haku_icao, 'Name': result[0], 'Municipality':result[1]}
         return vastaus
     else:
-        vastaus = {"palaute": "Ei tuloksia."}
+        vastaus = {"palaute": "Virheellinen osoite."}
         return vastaus
 
     get_airport(haku_icao)
