@@ -24,21 +24,18 @@ app = Flask(__name__)
 app.config['JSON_SORT_KEYS'] = False
 @app.route('/kenttä/<haku_icao>')
 
-
 def get_airport(haku_icao):
     query = f"select name, municipality from airport where ident ='{haku_icao}'"
     cursor = connection.cursor()
     cursor.execute(query)
     result = cursor.fetchone()
     if cursor.rowcount > 0:
-        vastaus = {'ICAO': haku_icao, 'Name': result[0], 'Municipality':result[1]}
+        vastaus = {'ICAO': haku_icao, 'Name': result[0], 'Municipality': result[1]}
         return vastaus
     else:
         vastaus = {"palaute": "Virheellinen osoite."}
         return vastaus
 
-    get_airport(haku_icao)
-    vastaus = {"palaute": "Ei tuloksia."}
     jsonvast = json.dumps(vastaus)
     return Response(response=jsonvast, mimetype="application/json")
 
